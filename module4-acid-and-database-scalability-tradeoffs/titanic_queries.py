@@ -14,10 +14,10 @@ titanic_df.to_sql('titanic_table', con=sl_conn, if_exists='replace')
 sl_curs = sl_conn.cursor()
 
 # dont commit  password, 
-dbname = 'xftzfimi'
-user = 'xftzfimi'
-password = 'hv5bMWTZcnfmQYBVvTa1BDOz1KAOnrhR' # DONT COMMIT THIS
-host = 'salt.db.elephantsql.com'
+dbname = ''
+user = ''
+password = '' # DONT COMMIT THIS
+host = ''
 
 pg_conn = psycopg2.connect(dbname = dbname, user = user,
                         password = password, host = host)
@@ -126,4 +126,9 @@ query  = 'SELECT AVG(Fare) FROM titanic_table'
 ans = sl_curs.execute(query).fetchall()
 print(ans)
 
+# BONUSSS
+
+query = "SELECT COUNT(name) FROM titanic_table WHERE (Name LIKE 'Mr.%' OR Name LIKE 'Mrs.%') AND Siblings_Spouses_Aboard >= 1 "
+ans = sl_curs.execute(query).fetchall()
+ans
 
