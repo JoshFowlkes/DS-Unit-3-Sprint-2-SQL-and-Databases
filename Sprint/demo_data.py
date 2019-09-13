@@ -28,16 +28,19 @@ VALUES ('g', 3, 9),
 #conn.commit()
 
 
+# Number of Rows
 query = 'SELECT COUNT(s) FROM demo'
 ans = curs.execute(query).fetchall()
 print('Number of Rows: ', ans[0][0])
 
 
+# Number of Rows Where both X and Y are greater/equal to 5
 query = 'SELECT COUNT(s) FROM demo WHERE x >= 5 AND y >= 5'
 ans = curs.execute(query).fetchall()
 print('Number of rows where x and y are at least 5: ', ans[0][0])
 
 
+# Number of Distinct Y Values
 query = 'SELECT COUNT(DISTINCT y) FROM demo'
 ans = curs.execute(query).fetchall()
 print('Number of unqiue Y values: ', ans[0][0])

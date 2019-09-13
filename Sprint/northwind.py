@@ -29,6 +29,7 @@ print('\n')
 
 
 # Stretch Question
+# Average Age at time of Hire by City
 query = '''
 SELECT City, AVG(HireDate - BirthDate)
 FROM Employee
@@ -39,7 +40,8 @@ print('Average age at the time of hire Grouped by City is: ', ans)
 print('\n')
 
 
-# now for the joins Queries
+# ---JOIN Queries---- 
+# Ten Most expensive Items and their supplier
 query = '''SELECT ProductName, UnitPrice, Supplier.CompanyName
 FROM Product  JOIN Supplier ON (Product.SupplierId=Supplier.Id)
 ORDER BY UnitPrice DESC
@@ -49,7 +51,7 @@ print('Ten Most expensive items, The Price, The Supplier. All in descending orde
 print('\n')
 
 
-# largest category 
+# Largest category by Distinct Products
 query = '''SELECT CategoryID, COUNT(CategoryId)
 FROM Product
 GROUP BY CategoryId
@@ -60,6 +62,7 @@ print('\n')
 
 
 # Stretch Goal
+# The employee with the most territories
 query = '''
 SELECT FirstName, LastName, COUNT(EmployeeTerritory.EmployeeId)
 FROM Employee JOIN EmployeeTerritory ON (Employee.Id = EmployeeTerritory.EmployeeId)
