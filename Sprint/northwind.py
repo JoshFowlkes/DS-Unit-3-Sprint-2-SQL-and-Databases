@@ -27,15 +27,17 @@ query = '''SELECT ProductName, UnitPrice
 FROM Product
 ORDER BY UnitPrice DESC
 LIMIT 10'''
-ans = curs.execute(query)
+ans = curs.execute(query).fetchall()
 print('Ten Most expensive items in descending order starting from highest:', ans)
+print('\n')
 
 query = '''
 SELECT AVG(HireDate - BirthDate)
 FROM Employee
 '''
-ans = curs.execute(query)
+ans = curs.execute(query).fetchall()
 print('Average age at the time of hire is: ', ans)
+print('\n')
 
 # Stretch Question
 query = '''
@@ -43,16 +45,18 @@ SELECT City, AVG(HireDate - BirthDate)
 FROM Employee
 GROUP BY City
 '''
-ans = curs.execute(query)
+ans = curs.execute(query).fetchall()
 print('Average age at the time of hire Grouped by City is: ', ans)
+print('\n')
 
 # now for the joins Queries
 query = '''SELECT ProductName, UnitPrice, Supplier.CompanyName
 FROM Product  JOIN Supplier ON (Product.SupplierId=Supplier.Id)
 ORDER BY UnitPrice DESC
 LIMIT 10'''
-ans = curs.execute(query)
+ans = curs.execute(query).fetchall()
 print('Ten Most expensive items in descending order starting from highest AND their supplier:', ans)
+print('\n')
 
 
 # largest category 
@@ -60,14 +64,21 @@ query = '''SELECT CategoryID, COUNT(CategoryId)
 FROM Product
 GROUP BY CategoryId
 LIMIT 1'''
-ans = curs.execute(query)
+ans = curs.execute(query).fetchall()
 print('LArgest Category by Distinct Products, Limit 1 :', ans)
+print('\n')
 
 # Stretch Goal
-#query = '''
-#'''
-#ans = curs.execute(query)
-#print(' :', ans)
+query = '''
+SELECT FirstName, LastName, COUNT(EmployeeTerritory.EmployeeId)
+FROM Employee JOIN EmployeeTerritory ON (Employee.Id = EmployeeTerritory.EmployeeId)
+GROUP BY EmployeeTerritory.EmployeeId
+ORDER BY COUNT(EmployeeTerritory.EmployeeId) DESC
+'''
+ans = curs.execute(query).fetchall()
+print('\n')
+print('The Employee with the most Territories is and the count :', ans)
+print('\n')
 
 
 

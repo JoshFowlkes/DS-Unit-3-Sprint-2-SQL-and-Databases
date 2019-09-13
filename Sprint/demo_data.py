@@ -12,7 +12,8 @@ CREATE TABLE demo (
     y INT
 );
 """
-curs.execute(create_table)
+# the next line is commented out so as not to create a new table
+#curs.execute(create_table)
 
 insert_data = """
 INSERT INTO demo 
@@ -21,18 +22,19 @@ VALUES ('g', 3, 9),
        ('v', 5, 7),
        ('f', 8, 7)  
 """
-curs.execute(insert_data)
-conn.commit()
+# the next line is commented out so as not to reinsert new data into the table
+#curs.execute(insert_data)
+#conn.commit()
 
 query = 'SELECT COUNT(s) FROM demo'
 ans = curs.execute(query).fetchall()
-print('Number of Rows: ', ans)
+print('Number of Rows: ', ans[0][0])
 
 query = 'SELECT COUNT(s) FROM demo WHERE x >= 5 AND y >= 5'
 ans = curs.execute(query).fetchall()
-print('Number of rows where x and y are at least 5: ' ans)
+print('Number of rows where x and y are at least 5: ', ans[0][0])
 
 query = 'SELECT COUNT(DISTINCT y) FROM demo'
 ans = curs.execute(query).fetchall()
-print('Number of unqiue Y values: ', ans)
+print('Number of unqiue Y values: ', ans[0][0])
 
