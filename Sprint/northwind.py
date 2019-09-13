@@ -104,3 +104,26 @@ and scalability. Take for example the answer in question2, NewSQL attempts to so
 have the latest data readily available as quickly as possible to avoid the issue that happens in the bank account withdrawel example. 
 
 '''
+
+
+
+'''
+--------- THE OUT PUTS FOR FACILITATED GRADING -----------
+Ten Most expensive items in descending order starting from highest: [('Côte de Blaye', 263.5), ('Thüringer Rostbratwurst', 123.79), ('Mishi Kobe Niku', 97), ("Sir Rodney's Marmalade", 81), ('Carnarvon Tigers', 62.5), ('Raclette Courdavault', 55), ('Manjimup Dried Apples', 53), ('Tarte au sucre', 49.3), ('Ipoh Coffee', 46), ('Rössle Sauerkraut', 45.6)]
+
+
+Average age at the time of hire is:  37.22222222222222
+
+
+Average age at the time of hire Grouped by City is:  [('Kirkland', 29.0), ('London', 32.5), ('Redmond', 56.0), ('Seattle', 40.0), ('Tacoma', 40.0)]
+
+
+Ten Most expensive items, The Price, The Supplier. All in descending order:  [('Côte de Blaye', 263.5, 'Aux joyeux ecclésiastiques'), ('Thüringer Rostbratwurst', 123.79, 'Plutzer Lebensmittelgroßmärkte AG'), ('Mishi Kobe Niku', 97, 'Tokyo Traders'), ("Sir Rodney's Marmalade", 81, 'Specialty Biscuits, Ltd.'), ('Carnarvon Tigers', 62.5, 'Pavlova, Ltd.'), ('Raclette Courdavault', 55, 'Gai pâturage'), ('Manjimup Dried Apples', 53, "G'day, Mate"), ('Tarte au sucre', 49.3, "Forêts d'érables"), ('Ipoh Coffee', 46, 'Leka Trading'), ('Rössle Sauerkraut', 45.6, 'Plutzer Lebensmittelgroßmärkte AG')]
+
+
+Largest Category by Distinct Products, Limit 1, and the number of products : [(1, 12)]
+
+
+The Employee with the most Territories is and the count : [('Robert', 'King', 10)]
+
+'''
