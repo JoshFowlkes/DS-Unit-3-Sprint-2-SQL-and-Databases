@@ -23,6 +23,7 @@ NULL, \n  "Fax" VARCHAR(8000) NULL \n)',)]
 '''
 
 # Queries
+# ten most expensive products 
 query = '''SELECT ProductName, UnitPrice
 FROM Product
 ORDER BY UnitPrice DESC
@@ -32,6 +33,7 @@ print('\n')
 print('Ten Most expensive items in descending order starting from highest:', ans)
 print('\n')
 
+# avg age at hire date
 query = '''
 SELECT AVG(HireDate - BirthDate)
 FROM Employee
