@@ -5,22 +5,6 @@ conn = sqlite3.connect('northwind_small (1).sqlite3')
 # Make Cursor 
 curs = conn.cursor()
 
-'''
-curs.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY
-name;").fetchall()
-[('Category',), ('Customer',), ('CustomerCustomerDemo',),
-('CustomerDemographic',), ('Employee',), ('EmployeeTerritory',), ('Order',),
-('OrderDetail',), ('Product',), ('Region',), ('Shipper',), ('Supplier',),
-('Territory',)]
-
-curs.execute('SELECT sql FROM sqlite_master WHERE name="Customer";').fetchall()
-[('CREATE TABLE "Customer" \n(\n  "Id" VARCHAR(8000) PRIMARY KEY, \n
-"CompanyName" VARCHAR(8000) NULL, \n  "ContactName" VARCHAR(8000) NULL, \n
-"ContactTitle" VARCHAR(8000) NULL, \n  "Address" VARCHAR(8000) NULL, \n  "City"
-VARCHAR(8000) NULL, \n  "Region" VARCHAR(8000) NULL, \n  "PostalCode"
-VARCHAR(8000) NULL, \n  "Country" VARCHAR(8000) NULL, \n  "Phone" VARCHAR(8000)
-NULL, \n  "Fax" VARCHAR(8000) NULL \n)',)]
-'''
 
 # Queries
 # ten most expensive products 
@@ -33,6 +17,7 @@ print('\n')
 print('Ten Most expensive items in descending order starting from highest:', ans)
 print('\n')
 
+
 # avg age at hire date
 query = '''
 SELECT AVG(HireDate - BirthDate)
@@ -41,6 +26,7 @@ FROM Employee
 ans = curs.execute(query).fetchall()
 print('Average age at the time of hire is: ', ans[0][0])
 print('\n')
+
 
 # Stretch Question
 query = '''
@@ -51,6 +37,7 @@ GROUP BY City
 ans = curs.execute(query).fetchall()
 print('Average age at the time of hire Grouped by City is: ', ans)
 print('\n')
+
 
 # now for the joins Queries
 query = '''SELECT ProductName, UnitPrice, Supplier.CompanyName
@@ -70,6 +57,7 @@ LIMIT 1'''
 ans = curs.execute(query).fetchall()
 print('LArgest Category by Distinct Products, Limit 1, and the number of products :', ans)
 print('\n')
+
 
 # Stretch Goal
 query = '''

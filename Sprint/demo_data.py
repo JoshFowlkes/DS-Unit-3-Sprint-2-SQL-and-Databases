@@ -1,9 +1,9 @@
 import sqlite3
 
-# Make Connection 
+# Make Connection and Cursor
 conn = sqlite3.connect('demo_data.sqlite3')
-# Make Cursor 
 curs = conn.cursor()
+
 
 create_table = """
 CREATE TABLE demo (
@@ -14,6 +14,7 @@ CREATE TABLE demo (
 """
 # the next line is commented out so as not to create a new table
 #curs.execute(create_table)
+
 
 insert_data = """
 INSERT INTO demo 
@@ -26,13 +27,16 @@ VALUES ('g', 3, 9),
 #curs.execute(insert_data)
 #conn.commit()
 
+
 query = 'SELECT COUNT(s) FROM demo'
 ans = curs.execute(query).fetchall()
 print('Number of Rows: ', ans[0][0])
 
+
 query = 'SELECT COUNT(s) FROM demo WHERE x >= 5 AND y >= 5'
 ans = curs.execute(query).fetchall()
 print('Number of rows where x and y are at least 5: ', ans[0][0])
+
 
 query = 'SELECT COUNT(DISTINCT y) FROM demo'
 ans = curs.execute(query).fetchall()
